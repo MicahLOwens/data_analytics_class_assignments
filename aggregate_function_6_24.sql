@@ -22,5 +22,5 @@ SELECT to_station_name, sum(tripduration), COUNT(*)
 from da_pronto.trip
 
 GROUP BY to_station_name
-ORDER BY sum desc
+ORDER BY sum asc
 LIMIT 100
