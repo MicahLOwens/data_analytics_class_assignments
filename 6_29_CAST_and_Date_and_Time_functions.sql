@@ -29,9 +29,15 @@ LIMIT 500;
 SELECT
 	from_station_name,
 	to_station_name,
-	(tripduration / 60) / 60 as tripduration_hours,
+	(avg(tripduration) / 60) / 60 as tripduration_hours,
 	cast (starttime as date) as trip_date,
 	date_trunc('year', starttime)
 	
 FROM da_pronto.trip
+Group by
+from_station_name,
+to_station_name,
+starttime
+
+ORDER BY tripduration_hours desc
 LIMIT 500
