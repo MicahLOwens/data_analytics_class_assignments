@@ -27,7 +27,7 @@ Select
 *
 FROM da_auto.auto_2016;
 
---2
+--3
 SELECT
 '2014' AS "Year",
 	"rank",
