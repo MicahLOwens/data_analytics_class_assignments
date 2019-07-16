@@ -21,7 +21,7 @@ SELECT
 	
 FROM da_pronto.trip t
 
-INNER JOIN total_avg_duration d on TRUE
+JOIN total_avg_duration d on TRUE
 
 GROUP BY
 	t.starttime,
