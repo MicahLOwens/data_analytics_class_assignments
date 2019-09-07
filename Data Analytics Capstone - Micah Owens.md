@@ -9,6 +9,8 @@ The subject of this Data Analytics Capstone Project is an analysis of a large se
 **Question (For the Purpose of the Capstone Project):**
 The question of interest for purposes of the assignment was whether there is a correlation between GMB listing ratings (on a scale of 0-5) and conversion rates. The hypothesis going into this research was that there would be a positive correlation between the two metrics.
 
+[Find the Dashboard here][1]
+
 ## Introduction
 The goal of the final dashboard was to create a central, easily navigable place for non-technical users to be able to evaluate home health care location’s performance in organic search (using the Google search engine). Several limitations and qualifications were determined early on, detailed below:
 - **The dashboard must be usable for non-technical users:** Filters & controls should be simplified as much as possible and abstract away the need for technical know-how.
@@ -89,14 +91,17 @@ _Note that API calls have had some information (such as URL targets & API keys) 
 ### API Call Examples
 **(2-A) GET Request for Google Pagespeed**
 ```https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https://lhcgroup.com/locations/christus-homecare-of-tyler/&strategy=mobile&responseCode=integer&ruleGroups.(AIzaSyAPC0wrtVAzsAT9p9f5y_jshMExyLmwfZs).score=integer&key=[API-KEY-HERE]
+
 ```
 
 **(2-B) GET Request Sample for Google My Business Data**
 ```https://mybusiness.googleapis.com/$discovery/rest?version=v4
+
 ```
 
 **(2-C) GET Request for SEMRush Site Auditing**
 ```https://api.semrush.com/?type=domain\_organic&key=[APIKEYHERE]&display\_limit=100&export\_columns=Ph,Po,Nq,Tg,Co,Ur&domain=&display\_sort=nq\_desc&database=us
+
 ```
 
 ### Tableau Formulas
@@ -118,8 +123,10 @@ WHEN "Total Searches" then [Total searches]
 END
 ```
 
-**(3-C) Example of Formula to Combine Data Sources into Custom Metrics
-	(([Search views]/100)+([Total searches]/100)+([Discovery searches]/100)/3)
+\*\*(3-C) Example of Formula to Combine Data Sources into Custom Metrics
+```
+(([Search views]/100)+([Total searches]/100)+([Discovery searches]/100)/3)
+```
 
 **(3-D) Custom XML File for Adding Client-Branded Color Palette to Tableau**
 ```	<?xml version='1.0'?>
@@ -191,7 +198,7 @@ END
 	WITH DELIMITER ',' CSV;
 
 	COMMIT;
-	```
+```
 
 **(4-B) Sample Query for Extracting Only Conversion Info & Primary Key from Source for Normalized Data**
 ```	SELECT
@@ -211,8 +218,13 @@ END
 
 [^2]:	“Families” are sets of locations under the same name & owner, and are often analyzed together
 
-[^3]:	[https://www.keyboardmaestro.com/main/#Overview](https://www.keyboardmaestro.com/main/#Overview)
+[^3]:	[https://www.keyboardmaestro.com/main/#Overview][2]
 
-[^4]:	[https://apps.apple.com/us/app/shortcuts/id915249334](https://apps.apple.com/us/app/shortcuts/id915249334)
+[^4]:	[https://apps.apple.com/us/app/shortcuts/id915249334][3]
 
-[^5]:	[https://developers.google.com/web/tools/lighthouse/#cli](https://developers.google.com/web/tools/lighthouse/#cli)
+[^5]:	[https://developers.google.com/web/tools/lighthouse/#cli][4]
+
+[1]:	https://public.tableau.com/views/LHCGoogleMyBusinessDashboardv_01/LHCDashboard?:embed=y&:display_count=yes&publish=yes&:origin=viz_share_link "Click to View Dashboard"
+[2]:	https://www.keyboardmaestro.com/main/#Overview
+[3]:	https://apps.apple.com/us/app/shortcuts/id915249334
+[4]:	https://developers.google.com/web/tools/lighthouse/#cli
