@@ -45,7 +45,7 @@ SELECT
 	station_name,
 	min(min_temp)
 
-FROM da_weather.us_weather_anomalies
+FROM da_weather.us_weather_anomalies										
 WHERE date_ymd BETWEEN '2013-01-01' AND '2013-12-31'
 AND latitude > '36'
 GROUP BY
